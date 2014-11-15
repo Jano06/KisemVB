@@ -1,0 +1,299 @@
+﻿<%@ Master Language="VB" CodeFile="MasterMaqueta.master.vb" Inherits="sw_principal" %>
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="cc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Página sin título</title>
+    <link rel="stylesheet" href="kisem.css"/>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+#contenedor{
+	position:relative;
+	vertical-align:bottom;
+            top: 0px;
+            left: 0px;
+        }
+	.overlay 
+        {
+          position: fixed;
+          z-index: 98;
+          top: 0px;
+          left: 0px;
+          right: 0px;
+          bottom: 0px;
+            background-color: #aaa;
+           filter: alpha(opacity=80);
+            opacity: 0.8;
+        }
+        .overlayContent
+        {
+          z-index: 99;
+          margin: 250px auto;
+          width: 126px;
+          height: 22px;
+        }
+        .overlayContent h2
+        {
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+        }
+        .overlayContent img
+        {
+          width: 126px;
+          height: 22px;
+        }
+        #apDiv2 {
+	position:absolute;
+	width: 300px;
+	height: 69px;
+	z-index: 1;
+	visibility: visible;
+	right:50px;
+	bottom:-15px;
+	}
+	#NombreAsociado 
+	{
+	    text-align:left;
+	position:absolute;
+	width: 600px;
+	height: 20px;
+	z-index: 1;
+	visibility: visible;
+	left:100px;
+	bottom:-19px;
+	}
+        </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <table width="100%">
+            <tr style="height:115px;">
+                <td colspan="2" align="center" style="background-image:url('img/Banner_superior.jpg'); background-position:center;"> <div id="contenedor">
+                &nbsp;<div id="apDiv2">
+                   
+                     <a href="salir.aspx">
+                           <img alt="Cerrar Sesión" src="img/hilda/salir.png" 
+                               border=0 />
+                               </a></div>
+                        <div id="NombreAsociado">
+                            <asp:Label ID="lblnombreasociado" runat="server" CssClass="NombreAsociado" 
+                                Text="Nombre Asociado"></asp:Label>
+                        </div>       
+                               
+                               
+                               </div>
+                    </td>
+                </tr>
+            <tr> 
+                <td  class="menu" width="260px" >
+                           <div align="center" class="menu">
+                           <a href="bienvenido.aspx"><img alt="Inicio" 
+                               src="img/hilda/inicio.jpg"  border=0/></a><div style="text-align:center;">
+                               <cc1:Accordion ID="MenuAsociado" Visible="false" runat="server"
+                               SelectedIndex="-1"  HeaderCssClass="encabezadomenu"
+                                ContentCssClass="menu" AutoSize="None"
+                                FadeTransitions="true" TransitionDuration="250"
+                            FramesPerSecond="80" Width="280px" RequireOpenedPane="true" >
+                        
+                                    <Panes>
+                                      
+                                        <cc1:AccordionPane ID="AccordionPane1" runat="server">
+                                            <Header>
+                                               <img id="img1" src="img/hilda/oficina.jpg" onmouseover="img1.src='img/hilda/oficina.jpg'" onmouseout="img1.src='img/hilda/oficina.jpg'" />
+                                            </Header>
+                                           <Content>
+                                                
+                                                <li class="menu"><a href="misdatospersonales.aspx" class="menu"><img src="img/hilda/misdatos.jpg" border=0/></a></li>
+                                                <li class="menu"><a href="password.aspx" class="menu"><img src="img/hilda/password.jpg" border=0/></a></li>
+                                                <li class="menu"><a href="miorganizacion.aspx" class="menu"><img src="img/hilda/miorganizacion.jpg" border=0/></a></li>
+                                                <li class="menu"><a href="miscompras.aspx" class="menu"><img src="img/hilda/miscompras.jpg" border=0/></a></li>
+                                                <li class="menu"><a href="mispagos.aspx" class="menu"><img src="img/hilda/mispagos.jpg" border=0/></a></li>
+                                                <li class="menu"><a href="miscomisiones.aspx" class="menu"><img src="img/hilda/calculadora.jpg" border=0/></a></li>
+                                                <li class="menu"><a href="comprasnuevas.aspx" class="menu"><img src="img/hilda/compras.jpg" border=0/></a></li>
+                                                <li class="menu"><a href="arbolcolocacion.aspx" class="menu"><img src="img/hilda/arbol.jpg" border=0/></a></li>
+                                                
+                                            </Content>
+                                        </cc1:AccordionPane>
+                                                      
+                                    </Panes>
+                                </cc1:Accordion>
+                               <cc1:Accordion ID="Menuadmin" Visible="false" runat="server"
+                               SelectedIndex="-1" HeaderCssClass="encabezadomenu"
+                                ContentCssClass="menu" AutoSize="None"
+                                FadeTransitions="true" TransitionDuration="250"
+                            FramesPerSecond="80" Width="280px" RequireOpenedPane="false" >
+                        
+                                    <Panes>
+                                        <cc1:AccordionPane ID="AccordionPane0ficina" runat="server">
+                                            <Header>
+                                               <img id="img2" src="img/hilda/oficina.jpg" onmouseover="img2.src='img/hilda/oficina.jpg'" onmouseout="img2.src='img/hilda/oficina.jpg'" />
+                                            </Header>
+                                           <Content>
+                                                <li class="menu"><a href="misdatospersonales.aspx" class="menu"><img src="img/hilda/misdatos.jpg" border=0/></a></li>
+                                                <li class="menu"><a href="password.aspx" class="menu"><img src="img/hilda/password.jpg" border=0/></a></li>
+                                                <li class="menu"><a href="miorganizacion.aspx" class="menu"><img src="img/hilda/miorganizacion.jpg" border=0/></a></li>
+                                                <li class="menu"><a href="miscompras.aspx" class="menu"><img src="img/hilda/miscompras.jpg" border=0/></a></li>
+                                                <li class="menu"><a href="mispagos.aspx" class="menu"><img src="img/hilda/mispagos.jpg" border=0/></a></li>
+                                                <li class="menu"><a href="miscomisiones.aspx" class="menu"><img src="img/hilda/calculadora.jpg" border=0/></a></li>
+                                                <li class="menu"><a href="comprasnuevas.aspx" class="menu"><img src="img/hilda/compras.jpg" border=0/></a></li>
+                                                <li class="menu"><a href="arbolcolocacion.aspx" class="menu"><img src="img/hilda/arbol.jpg" border=0/></a></li>
+                                                
+                                            </Content>
+                                        </cc1:AccordionPane>
+                                          <cc1:AccordionPane ID="AccordionAdmin" runat="server">
+                                                    <Header>
+                                                       <img id="imgadmin" src="img/botones/BTN_Kisem-03.png"  onmouseover="imgadmin.src='img/botones/BTN_Kisem-Rollover-03.png'" onmouseout="imgadmin.src='img/botones/BTN_Kisem-03.png'" />
+                                                    </Header>
+                                                   <Content>
+                                                        
+                                                       <asp:Panel ID="Panel13" runat="server" Width="250px" Height="45px" visible="false">
+                                                            <a href="rpt_volumenrangos.aspx" class="menu">Reporte de Volumen para Rangos</a></asp:Panel>
+                                                       <asp:Panel ID="Panel9" runat="server" Width="250px" Height="30px" visible="false">
+                                                            <a href="compras_entrega.aspx" class="menu">Entrega de Compras</a></asp:Panel>
+                                                       <asp:Panel ID="Panel5" runat="server" Width="250px" Height="30px" visible="false">
+                                                            <a href="comprasadministrador.aspx" class="menu">Compras Administrador</a></asp:Panel>
+                                                       <asp:Panel ID="Panel3" runat="server" Width="250px" Height="30px" visible="false">
+                                                            <a href="compras_cancelacion.aspx" class="menu">Cancelación de Compras</a></asp:Panel>
+                                                       <asp:Panel ID="Panel2" runat="server" Width="250px" Height="30px" visible="false">
+                                                            <a href="avisos.aspx" class="menu">Avisos</a></asp:Panel>
+                                                       <asp:Panel ID="Panel7" runat="server" Width="250px" Height="30px" visible="false">
+                                                            <a href="comisiones_nuevas.aspx" class="menu">Correr Comisiones</a></asp:Panel>
+                                                       <asp:Panel ID="Panel8" runat="server" Width="250px" Height="30px" visible="false">
+                                                            <a href="comisiones_eliminar.aspx" class="menu">Eliminar Comisiones</a></asp:Panel>
+                                                       <asp:Panel ID="Panel1" runat="server" Width="250px" Height="30px" visible="false">
+                                                            <a href="comisiones_ajustes.aspx" class="menu">Ajustar Comisiones</a></asp:Panel>
+                                                       <asp:Panel ID="Panel4" runat="server" Width="250px" Height="30px" visible="false">
+                                                            <a href="ciclos.aspx" class="menu">Ciclos de Calificación</a></asp:Panel>
+                                                       <asp:Panel ID="Panel11" runat="server" Width="250px" Height="30px" visible="false">
+                                                            <a href="pagosrangos.aspx" class="menu">Pagos por Rangos</a></asp:Panel>
+                                                       <asp:Panel ID="Panel14" runat="server" Width="250px" Height="30px" visible="false">
+                                                            <a href="usuarios.aspx" class="menu">Usuarios del Sistema</a></asp:Panel>
+                                                       <asp:Panel ID="Panel15" runat="server" Width="250px" Height="30px" visible="false">
+                                                            <a href="comprasvalidacion.aspx" class="menu">Validación de Compras</a></asp:Panel>
+                                                       <asp:Panel ID="Panel6" runat="server" Width="250px" Height="30px" visible="false">
+                                                            <a href="configuracion.aspx" class="menu">Configuración del Sistema</a></asp:Panel>
+                                                       <asp:Panel ID="Panel10" runat="server" Width="250px" Height="30px" visible="false">
+                                                            <a href="arbol_cambios.aspx" class="menu">Movimientos en el Árbol</a></asp:Panel>
+                                                       <asp:Panel ID="Panel12" runat="server" Width="250px" Height="30px" visible="false">
+                                                            <a href="rangos_pruebas.aspx" class="menu">Pruebas de Cambios de Rango</a></asp:Panel>
+                                                       <asp:Panel ID="Panel16" runat="server" Width="250px" Height="30px" visible="false">
+                                                            <a href="funciones.aspx" class="menu">Asignación de Funciones</a></asp:Panel>
+                                                       <asp:Panel ID="Panel25" runat="server" Width="250px" Height="30px" visible="false">
+                                                            <a href="compras_foraneas.aspx" class="menu">Compras Foráneas</a></asp:Panel>
+                                                    </Content>
+                                                </cc1:AccordionPane>
+                                                <cc1:AccordionPane ID="AccordionPaneReportes" runat="server">
+                                                                    <Header>
+                                                                       <img id="imgreportes" src="img/botones/BTN_Kisem-07.png" onmouseover="imgreportes.src='img/botones/BTN_Kisem-Rollover-07.png'" onmouseout="imgreportes.src='img/botones/BTN_Kisem-07.png'" />
+                                                                    </Header>
+                                                                   <Content>
+                                                                        
+                                                                       <asp:Panel ID="Panel17" runat="server" Width="250px" Height="30px" visible="false">
+                                                                            <a href="reporte_compras.aspx" class="menu">Ventas</a></asp:Panel>
+                                                                       <asp:Panel ID="Panel18" runat="server" Width="250px" Height="30px" visible="false">
+                                                                            <a href="pagos.aspx" class="menu">Pagos</a></asp:Panel>
+                                                                       <asp:Panel ID="Panel19" runat="server" Width="250px" Height="30px" visible="false">
+                                                                            <a href="puntos.aspx" class="menu">Puntos</a></asp:Panel>
+                                                                       <asp:Panel ID="Panel20" runat="server" Width="250px" Height="30px" visible="false">
+                                                                            <a href="asociados.aspx" class="menu">Asociados</a></asp:Panel>
+                                                                       <asp:Panel ID="Panel21" runat="server" Width="250px" Height="30px" visible="false">
+                                                                            <a href="reporterangosasociados.aspx" class="menu">Rangos</a></asp:Panel>
+                                                                       <asp:Panel ID="Panel22" runat="server" Width="250px" Height="30px" visible="false">
+                                                                            <a href="reporteavancesrangos.aspx" class="menu">Avances</a></asp:Panel>
+                                                                       <asp:Panel ID="Panel23" runat="server" Width="250px" Height="30px" visible="false">
+                                                                            <a href="reporteavancerangosciclo.aspx" class="menu">Avances por Ciclo</a></asp:Panel>
+                                                                       <asp:Panel ID="Panel24" runat="server" Width="250px" Height="30px" visible="false">
+                                                                            <a href="reporte_datospersonales.aspx" class="menu">Datos de Asociados</a></asp:Panel>
+                                                                        <asp:Panel ID="Panel26" runat="server" Width="250px" Height="30px" visible="false">
+                                                                            <a href="genealogia.aspx" class="menu">Genealogía</a></asp:Panel>
+                                                                    </Content>
+                                                                </cc1:AccordionPane>
+                                                               
+                                             <cc1:AccordionPane ID="AccordionPaneInventarios" runat="server">
+                                                    <Header>
+                                                       <img id="imginventarios" src="img/botones/BTN_Kisem-05.png"  onmouseover="imginventarios.src='img/botones/BTN_Kisem-Rollover-05.png'" onmouseout="imginventarios.src='img/botones/BTN_Kisem-05.png'" />
+                                                    </Header>
+                                                   <Content>
+                                                        <li class="menu"><a href="inventarios_detalle.aspx" class="menu">Inventarios</a></li>
+                                                        <li class="menu"><a href="bodegas.aspx" class="menu">Bodegas</a></li>
+                                                        <li class="menu"><a href="categorias.aspx" class="menu">Categorías</a></li>
+                                                        <li class="menu"><a href="productos.aspx" class="menu">Productos</a></li>
+                                                        <li class="menu"><a href="reporte_compras.aspx" class="menu">Reporte de Compras</a></li>
+                                                        <li class="menu"><a href="paquetes.aspx" class="menu">Paquetes</a></li>
+                                                        <li class="menu"><a href="inventarios_agregarproductos.aspx" class="menu">Agregar productos a Bodega</a></li>
+                                                        <li class="menu"><a href="inventarios_movimientos.aspx" class="menu">Movimientos de Producto</a></li>
+                                                        <li class="menu"><a href="inventarios_salidas.aspx" class="menu">Salidas de Producto</a></li>
+                                                        <li class="menu"><a href="inventarios_entradas.aspx" class="menu">Entradas de Producto</a></li>
+                                                    </Content>
+                                                </cc1:AccordionPane>  
+                                             <cc1:AccordionPane ID="AccordionPaneInventarios2" runat="server" Visible="false">
+                                                    <Header>
+                                                       <img id="img3" src="img/botones/BTN_Kisem-05.png"  onmouseover="img3.src='img/botones/BTN_Kisem-Rollover-05.png'" onmouseout="img3.src='img/botones/BTN_Kisem-05.png'" />
+                                                    </Header>
+                                                   <Content>
+                                                        <li class="menu"><a href="inventarios_detalle.aspx" class="menu">Inventarios</a></li>
+                                                        <li class="menu"><a href="reporte_compras.aspx" class="menu">Reporte de Compras</a></li>
+                                                   </Content>
+                                                </cc1:AccordionPane>               
+                                    </Panes>
+                                </cc1:Accordion> 
+                                 
+                                 </div> 
+                                <a href="prospectos_alta.aspx"><img alt="Alta de Asociados" 
+                               src="img/hilda/altanuevoasociado.jpg"  border=0/></a><br />
+                               
+                               </div>
+                           </td>
+                <td style="width:900px;" valign="top">
+                     
+                       <asp:Label ID="mastertitulo" runat="server" CssClass="titulomaster"></asp:Label>
+                    <asp:ScriptManager ID="ScriptManager1" runat="server" AsyncPostBackTimeout="0">
+                    </asp:ScriptManager>
+                   <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+                    </td>
+            </tr>
+            <tr style="height:117px;">
+                <td colspan="2" align="center" style="background-image:url('img/Banner_inferior.jpg'); background-position:center;"> <div id="contenedor0">
+                    <table align="right" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td>
+                                &nbsp;</td>
+                            <td align="right">
+                                <img alt="" src="img/hilda/pie/mantente.png" 
+                                    style="width: 179px; height: 40px" /></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;</td>
+                            <td align="right">
+                                <img alt="" src="img/hilda/pie/web.png" style="width: 179px; height: 25px" /></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;</td>
+                            <td align="right">
+                                <img alt="" src="img/hilda/pie/facebook.png" 
+                                    style="width: 179px; height: 25px" /></td>
+                        </tr>
+                    </table>
+                </div>
+                    </td>
+            </tr>
+        </table>
+        
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,89 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Kisem. Bienvenidos</title>
+     <link rel="stylesheet" href="sw/kisem.css"/>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+          body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+        #contenedor{
+	position:relative;
+	vertical-align:bottom;
+	}
+        #apDiv2 {
+	position:absolute;
+	width: 300px;
+	height: 44px;
+	z-index: 1;
+	visibility: visible;
+	right:50px;
+	bottom:0px;
+	background-image:url('sw/img/pestana.png'); 
+	background-repeat:no-repeat;
+	text-align:center;
+	vertical-align:bottom;
+	padding-top:5px;
+
+	
+	
+}
+       
+        #contenedor0{
+	position:relative;
+	vertical-align:bottom;
+	}
+               
+        </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div style="text-align:center;">
+        <table cellspacing="0" border="0" cellpadding="0" width=100% >
+            <tr style="height:117px;">
+                <td align="center" 
+                    style="background-image:url('sw/img/Banner_superiorInicio.jpg'); background-position:center;"> <div id="contenedor">
+                </div>
+                    </td>
+                </tr>
+            <tr>
+                <td colspan="2"> 
+                    </td>
+            </tr>
+            <tr>
+                <td align="left" valign="top">
+                    <table cellspacing="0" border="0" cellpadding="0" style=" width:1161px;">
+                        <tr>
+                            <td width="1050px" align="center">
+                            
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+       
+                            </td>
+                        </tr>
+                        </table>
+                </td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr style="height:117px;">
+             <td colspan="2" align="center" style="background-image:url('sw/img/Banner_inferior.jpg'); background-position:center;"> 
+               
+                    </td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>

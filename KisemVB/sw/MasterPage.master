@@ -1,0 +1,234 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="cc1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Página sin título</title>
+    <link rel="stylesheet" href="kisem.css"/>
+    <style type="text/css">
+        
+body {
+	background-image: url(img/bg.png);
+	background-repeat: repeat-x;
+	
+	background-color: #eeeeee;
+}
+.overlay 
+        {
+          position: fixed;
+          z-index: 98;
+          top: 0px;
+          left: 0px;
+          right: 0px;
+          bottom: 0px;
+            background-color: #aaa;
+            filter: alpha(opacity=80);
+            opacity: 0.8;
+        }
+        .overlayContent
+        {
+          z-index: 99;
+          margin: 250px auto;
+          width: 126px;
+          height: 22px;
+        }
+        .overlayContent h2
+        {
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+        }
+        .overlayContent img
+        {
+          width: 126px;
+          height: 22px;
+        }
+        #apDiv2x {
+	position:absolute;
+	width: 460px;
+	height: 69px;
+	z-index: 1;
+	visibility: visible;
+	left:180px;
+	top:100px;
+	background-image:url(img/pestana.png); 
+	background-repeat:no-repeat;
+	text-align:center;
+	
+	
+}
+</style>
+ 
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <table class="style1">
+            <tr>
+                <td colspan="2" style="background-image:url(img/top.png); background-repeat:no-repeat; height:149px;">
+                   <div id="apDiv2">
+                       <br />
+                       <asp:Label ID="mastertitulo" runat="server" CssClass="titulomaster" 
+                           Visible="False"></asp:Label>
+                    </div></td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    <asp:Menu ID="MenuAdmin" runat="server" CssClass="texto" Orientation="Horizontal" 
+                        Width="414px" BackColor="#F7F6F3" DynamicHorizontalOffset="2" 
+                        Font-Names="Verdana" Font-Size="0.8em" ForeColor="#7C6F57" 
+                        StaticSubMenuIndent="10px" Visible="False">
+                        <StaticSelectedStyle BackColor="#5D7B9D" />
+                        <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <DynamicHoverStyle BackColor="#7C6F57" ForeColor="White" />
+                        <DynamicMenuStyle BackColor="#F7F6F3" />
+                        <DynamicSelectedStyle BackColor="#5D7B9D" />
+                        <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
+                        <Items>
+                            <asp:MenuItem Text="Oficina Virtual" Value="Oficina Virtual">
+                                <asp:MenuItem NavigateUrl="~/sw/arbol.aspx" Text="Árbol" Value="Árbol">
+                                </asp:MenuItem>
+                                <asp:MenuItem Text="Mis Datos" Value="Mis Datos">
+                                    <asp:MenuItem NavigateUrl="~/sw/misdatos.aspx" Text="Datos Personales" 
+                                        Value="Mis Datos"></asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="~/sw/password.aspx" Text="Cambio de Contraseña" 
+                                        Value="Cambio de Contraseña"></asp:MenuItem>
+                                </asp:MenuItem>
+                                <asp:MenuItem Text="Reportes" Value="Reportes">
+                                    <asp:MenuItem NavigateUrl="~/sw/miscompras.aspx" Text="Mis Compras" 
+                                        Value="Mis Compras"></asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="~/sw/mispagos.aspx" Text="Mis Pagos" 
+                                        Value="Mis Pagos"></asp:MenuItem>
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/sw/miscomisiones.aspx" Text="Mis Comisiones" 
+                                    Value="Mis Comisiones"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Administración" Value="Administración">
+                                <asp:MenuItem NavigateUrl="~/sw/avisos.aspx" Text="Avisos" Value="Avisos">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/sw/comisiones.aspx" Text="Correr Comisiones" 
+                                    Value="Comisiones"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/sw/ciclos.aspx" Text="Ciclos de Calificación" 
+                                    Value="Ciclos de Calificación"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/sw/pagosrangos.aspx" Text="Pagos por Rangos" 
+                                    Value="Pagos por Rangos"></asp:MenuItem>
+                                <asp:MenuItem Text="Reportes" Value="Reportes">
+                                    <asp:MenuItem NavigateUrl="~/sw/reporte_compras.aspx" Text="Compras" 
+                                        Value="Reporte de Compras"></asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="~/sw/pagos.aspx" Text="Pagos" Value="Pagos">
+                                    </asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="~/sw/puntos.aspx" Text="Puntos" Value="Puntos">
+                                    </asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="~/sw/reporterangosasociados.aspx" Text="Rangos" 
+                                        Value="Rangos"></asp:MenuItem>
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/sw/usuarios.aspx" Text="Usuarios del Sistema" 
+                                    Value="Usuarios del Sistema"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Inventarios" Value="Inventarios">
+                                <asp:MenuItem NavigateUrl="~/sw/inventarios.aspx" Text="Inventarios" 
+                                    Value="Inventarios"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/sw/bodegas.aspx" Text="Bodegas" Value="Bodegas">
+                                </asp:MenuItem>
+                                <asp:MenuItem Text="Categorías" Value="Categorías" 
+                                    NavigateUrl="~/sw/categorias.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Productos" Value="Productos" 
+                                    NavigateUrl="~/sw/productos.aspx"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/sw/paquetes.aspx" Text="Paquetes" Value="Paquetes">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/sw/inventarios_agregarproductos.aspx" 
+                                    Text="Agregar Productos a Bodega" Value="Agregar Productos a Bodega">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/sw/inventarios_movimientos.aspx" 
+                                    Text="Movimientos de Producto" Value="Movimientos de Producto">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/sw/inventarios_salidas.aspx" 
+                                    Text="Salidas de Producto" Value="Salidas de Producto"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/sw/compras.aspx" Text="Compras Para Pruebas" 
+                                Value="Compras">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/sw/comprasnuevas.aspx" Text="Compras Normales" 
+                                Value="Compras Normales"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/sw/prospectos_alta.aspx" Text="Prospectos" 
+                                Value="Prospectos"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/sw/asociados.aspx" Text="Asociados" 
+                                Value="Asociados"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/sw/salir.aspx" Text="Salir" Value="Salir">
+                            </asp:MenuItem>
+                        </Items>
+                    </asp:Menu>
+                    <asp:Menu ID="MenuAsociado" runat="server" CssClass="texto" Orientation="Horizontal" 
+                        Width="414px" BackColor="#F7F6F3" DynamicHorizontalOffset="2" 
+                        Font-Names="Verdana" Font-Size="0.8em" ForeColor="#7C6F57" 
+                        StaticSubMenuIndent="10px" Visible="False">
+                        <StaticSelectedStyle BackColor="#5D7B9D" />
+                        <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <DynamicHoverStyle BackColor="#7C6F57" ForeColor="White" />
+                        <DynamicMenuStyle BackColor="#F7F6F3" />
+                        <DynamicSelectedStyle BackColor="#5D7B9D" />
+                        <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
+                        <Items>
+                            <asp:MenuItem Text="Oficina Virtual" Value="Oficina Virtual">
+                                <asp:MenuItem NavigateUrl="~/sw/arbol.aspx" Text="Árbol" Value="Árbol">
+                                </asp:MenuItem>
+                                <asp:MenuItem Text="Mis Datos" Value="Mis Datos">
+                                    <asp:MenuItem NavigateUrl="~/sw/misdatos.aspx" Text="Datos Personales" 
+                                        Value="Mis Datos"></asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="~/sw/password.aspx" Text="Cambio de Contraseña" 
+                                        Value="Cambio de Contraseña"></asp:MenuItem>
+                                </asp:MenuItem>
+                                <asp:MenuItem Text="Reportes" Value="Reportes">
+                                    <asp:MenuItem NavigateUrl="~/sw/miscompras.aspx" Text="Mis Compras" 
+                                        Value="Mis Compras"></asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="~/sw/mispagos.aspx" Text="Mis Pagos" 
+                                        Value="Mis Pagos"></asp:MenuItem>
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/sw/miscomisiones.aspx" Text="Mis Comisiones" 
+                                    Value="Mis Comisiones"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/sw/compras.aspx" Text="Compras" Value="Compras">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/sw/prospectos_alta.aspx" Text="Prospectos" 
+                                Value="Prospectos"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/sw/salir.aspx" Text="Salir" Value="Salir">
+                            </asp:MenuItem>
+                        </Items>
+                    </asp:Menu>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>
